@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ car.brand }} {{ car.model }}</title>
+    <style>
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ car.brand }} {{ car.model }}</h1>
+    <img src="{{ car.image.url }}" alt="{{ car.brand }} {{ car.model }}">
+    <p>Year: {{ car.year }}</p>
+    <p>Price: {{ car.price }} USD</p>
+    <p>Mileage: {{ car.mileage }} km</p>
+    <p>{{ car.description }}</p>
+
+    <!-- Стилізована кнопка -->
+    <a href="{% url 'sale_create' car.id %}">
+        <button>Buy this car</button>
+    </a>
+
+
+    <a href="{% url 'car_list' %}">
+        <button>Go to Car List</button>
+    </a>
+
+
+<h2>Place an Order</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit Order</button>
+</form>
+
+</body>
+</html>

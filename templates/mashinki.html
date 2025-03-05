@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Dealership</title>
+</head>
+    <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="offcanvas offcanvas-end" id="demo">
+  <div class="offcanvas-header">
+    <h1 class="offcanvas-title">Heading</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <nav>
+    <ul>
+        <li><a href="http://127.0.0.1:8000/car/2/">Спорткари</a></li>
+        <li><a href="http://127.0.0.1:8000/car/2/">Спортхетчі</a></li>
+        <li><a href="http://127.0.0.1:8000/car/2/">Суперкари</a></li>
+        <li><a href="http://127.0.0.1:8000/car/2/">Гіперкари</a></li>
+    </ul>
+</nav>
+
+    <button class="btn btn-secondary" type="button">A Button</button>
+  </div>
+</div>
+
+<div class="container-fluid mt-3">
+  <h3>Offcanvas Sidebar</h3>
+  <p>Offcanvas is similar to modals, except that it is often used as a sidebar.</p>
+  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+    Open Offcanvas Sidebar
+  </button>
+</div>
+
+
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background-color: #f0f0f0;
+        }
+        .car-photo {
+            position: absolute;
+            top: 100px;
+            left: 50px;
+            width: 300px;
+        }
+        body {
+            background-image: url('dealershish2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            font-family: Intro, sans-serif;
+            background-color: #27c7c9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 100px;
+        }
+}
+
+
+    </style>
+
+<body>
+
+        <h1>Автомобілі</h1>
+    <h1>Welcome to Our Car Dealership</h1>
+    <p>Here you can find a variety of cars at affordable prices. Choose the one that fits your needs and budget.</p>
+
+
+
+    <div>
+        {% for car in cars %}
+            <div>
+                <h2>{{ car.name }}</h2>
+                <p>{{ car.price }}</p>
+                <img src="{{ car.image.url }}" alt="{{ car.name }}">
+                <p>{{ car.description }}</p>
+            </div>
+
+
+
+
+
+
+            <li>
+                <a href="{% url 'car_detail' car.id %}">
+                    <h2>{{ car.brand }} {{ car.model }}</h2>
+                    <p>{{ car.year }} | {{ car.price }} USD</p>
+                    <p><strong>Description:</strong> {{ car.description }}</p>
+
+                </a>
+            </li>
+        {% endfor %}
+
+
+
+
+
+</body>
+</html>
