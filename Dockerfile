@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 # Set environment variables
 # Prevents Python from writing .pyc files to disk
@@ -22,4 +22,4 @@ COPY . /app/
 EXPOSE 8080
 
 # Command to run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:8080","Social_system.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8080","CarDealer.wsgi:application"]
