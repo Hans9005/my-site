@@ -22,4 +22,8 @@ COPY . /app/
 EXPOSE 8080
 
 # Command to run the application
+<<<<<<< HEAD
 CMD ["gunicorn", "--bind", "0.0.0.0:8080","CarDealer.wsgi:application"]
+=======
+CMD ["gunicorn", "--bind", "0.0.0.0:8080","CarDealer.wsgi:application"]
+>>>>>>> f3e2f205b79ed3b935e3b4bf333008864953d717
