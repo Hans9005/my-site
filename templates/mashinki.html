@@ -28,7 +28,7 @@
     </ul>
 </nav>
 
-    <button class="btn btn-secondary" type="button">A Button</button>
+   <li><a href="{% url 'About_us' %}" class="btn btn-primary">Про нас</a></li>
   </div>
 </div>
 
@@ -36,9 +36,11 @@
   <h3>Offcanvas Sidebar</h3>
   <p>Offcanvas is similar to modals, except that it is often used as a sidebar.</p>
   <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
-    Open Offcanvas Sidebar
+    Меню
   </button>
 </div>
+
+<a href="{% url 'About_us' %}" class="btn btn-outline-info">Про нас</a>
 
 
     <style>
@@ -46,7 +48,7 @@
             position: relative;
             width: 100%;
             height: 500px;
-            background-color: #f0f0f0;
+            background-color: #e7e9e8;
         }
         .car-photo {
             position: absolute;
@@ -63,7 +65,7 @@
         }
         body {
             font-family: Intro, sans-serif;
-            background-color: #27c7c9;
+            background-color: #e7e9e8;
             margin: 0;
             padding: 0;
         }

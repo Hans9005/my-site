@@ -98,6 +98,20 @@ STORAGES = {
 }
 
 
+#USE_I18N = True
+
+#LANGUAGE_CODE = 'uk'  # або 'en' за замовчуванням
+#USE_I18N = True
+#USE_L10N = True
+#USE_TZ = True
+
+LANGUAGES = [
+    ('uk', 'Українська'),
+    ('en', 'English'),
+]
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',  # де зберігатимуться переклади
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

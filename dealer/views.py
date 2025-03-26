@@ -7,6 +7,8 @@ from django.contrib.auth import login
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import SignUpForm
+from django.shortcuts import render
+
 
 
 def register(request):
@@ -77,3 +79,6 @@ class SaleCreateView(CreateView):
         car = get_object_or_404(Car, id=self.kwargs['car_id'])
         context['car'] = car
         return context
+
+def about(request):
+    return render(request, 'About_us.html')

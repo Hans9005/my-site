@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Car(models.Model):
     brand = models.CharField(max_length=100)
     model = models.CharField(max_length=100)
@@ -9,6 +10,7 @@ class Car(models.Model):
     mileage = models.PositiveIntegerField()  # пробіг в км
     description = models.TextField()
     image = models.ImageField(upload_to='cars/', blank=True)
+    category = models.ForeignKey("Category", on_delete=models.CASCADE, null=True, blank=True)
 
 
     def __str__(self):
@@ -26,3 +28,10 @@ class Sale(models.Model):
 
     def __str__(self):
         return f"Sale of {self.car} to {self.customer} on {self.sale_date}"
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
