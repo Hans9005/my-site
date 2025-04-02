@@ -82,3 +82,6 @@ class SaleCreateView(CreateView):
 
 def about(request):
     return render(request, 'About_us.html')
+
+def contact(request):
+    return render(request, 'Contact.html')

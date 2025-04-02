@@ -10,5 +10,6 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('login/', login_view, name='login'),
     path('About_us/', views.about, name='About_us'),
+    path('Contact/', views.contact, name='Contact'),
     #path('category/<str:category>/', views.mashinki, name='car_list_by_category'),
 ]

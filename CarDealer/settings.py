@@ -107,6 +107,7 @@ STORAGES = {
 
 LANGUAGES = [
     ('uk', 'Українська'),
+    ('ru', 'Русский'),
     ('en', 'English'),
 ]
 LOCALE_PATHS = [
